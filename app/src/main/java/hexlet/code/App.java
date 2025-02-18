@@ -1,4 +1,6 @@
 package hexlet.code;
+import hexlet.code.games.BrainEven;
+import hexlet.code.games.BrainCalc;
 import java.util.Scanner;
 
 public class App {
@@ -8,6 +10,7 @@ public class App {
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
         System.out.println("2 - Even");
+        System.out.println("3 - Calc");
         System.out.println("0 - Exit");
         System.out.print("Your choice: ");
 
@@ -19,6 +22,8 @@ public class App {
             case "2":
                 BrainEven.start();
                 break;
+            case "3":
+                BrainCalc.start();
             case "0":
                 break;
         }
