@@ -1,38 +1,26 @@
-package hexlet.code;
+package hexlet.code.games;
 import java.util.Random;
-import java.util.Scanner;
+import hexlet.code.Engine;
 
 
 public class BrainEven {
-    private static final int ROUNDS_TO_WIN = 3;
+    private static final String GAME_DESCRIPTION = "Answer 'yes' if the number " +
+        "is even, otherwise answer 'no'.";
 
     public static void start() {
-        Scanner scanner = new Scanner(System.in);
         Random random = new Random();
-        System.out.println("Welcome to the Brain Games!");
-        System.out.print("May I have your name? ");
-        var name = scanner.nextLine();
-        System.out.println("Hello, " + name + "!");
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-        var correctAnswers = 0;
+        var roundsCount = Engine.getRoundsToWin();
+        String[][] questionsAndAnswers = new String[roundsCount][2];
 
-        while (correctAnswers < ROUNDS_TO_WIN) {
-            var number = random.nextInt(100); // Генерируем случайное число от 0 до 99
-            System.out.println("Question: " + number);
-            System.out.print("Your answer: ");
-            var answer = scanner.nextLine();
+        for (int i = 0; i < roundsCount; i++) {
+            var number = random.nextInt(100);
+            var question = String.valueOf(number);
+            var answer = (number % 2 == 0) ? "yes" : "no";
 
-            var correctAnswer = (number % 2 == 0) ? "yes" : "no";
-
-            if (answer.equals(correctAnswer)) {
-                System.out.println("Correct!");
-                correctAnswers++;
-            } else {
-                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'.");
-                System.out.println("Let's try again, " + name + "!");
-                return;
-            }
+            questionsAndAnswers[i][0] = question;
+            questionsAndAnswers[i][1] = answer;
         }
-        System.out.println("Congratulations, " + name + "!");
+
+        Engine.startGame(GAME_DESCRIPTION, questionsAndAnswers);
     }
 }
