@@ -12,7 +12,7 @@ public class BrainCalc {
         String[][] questionsAndAnswers = new String[roundsCount][2];
         Random random = new Random();
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < roundsCount; i++) {
             var num1 = random.nextInt(MAX_NUMBER);
             var num2 = random.nextInt(MAX_NUMBER);
             char operator = OPERATORS[random.nextInt(OPERATORS.length)];
