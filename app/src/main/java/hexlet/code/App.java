@@ -3,6 +3,7 @@ import hexlet.code.games.BrainEven;
 import hexlet.code.games.BrainCalc;
 import hexlet.code.games.BrainGCD;
 import hexlet.code.games.BrainProgression;
+import hexlet.code.games.BrainPrime;
 import java.util.Scanner;
 
 public class App {
@@ -15,6 +16,7 @@ public class App {
         System.out.println("3 - Calc");
         System.out.println("4 - GCD");
         System.out.println("5 - Progression");
+        System.out.println("6 - Prime");
         System.out.println("0 - Exit");
         System.out.print("Your choice: ");
 
@@ -34,6 +36,9 @@ public class App {
                 break;
             case "5":
                 BrainProgression.start();
+                break;
+            case "6":
+                BrainPrime.start();
                 break;
             case "0":
                 break;
