@@ -4,7 +4,7 @@ import hexlet.code.Engine;
 import java.util.Random;
 
 public class BrainProgression {
-    private static final String GAME_DESCRIPTION = "What number is missing" +
+    private static final String GAME_DESCRIPTION = "What number is missing " +
             "in the progression?";
 
     public static String[] generateProgression() {
