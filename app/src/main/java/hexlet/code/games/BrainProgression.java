@@ -1,14 +1,13 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-
 import java.util.Random;
 
 public class BrainProgression {
     private static final String GAME_DESCRIPTION = "What number is missing" +
             "in the progression?";
 
-    public static  String[] generateProgression() {
+    public static String[] generateProgression() {
         Random random = new Random();
         var step = random.nextInt(10) + 1;
         var begin = random.nextInt(100) + 1;
