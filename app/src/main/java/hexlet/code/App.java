@@ -26,8 +26,10 @@ public class App {
                 break;
             case "3":
                 BrainCalc.start();
+                break;
             case "4":
                 BrainGCD.start();
+                break;
             case "0":
                 break;
         }
