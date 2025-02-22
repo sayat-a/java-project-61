@@ -4,8 +4,8 @@ import hexlet.code.Engine;
 import java.util.Random;
 
 public class BrainPrime {
-    private static final String GAME_DESCRIPTION = "Answer 'yes' if given " +
-            "number is prime. Otherwise answer 'no'.";
+    private static final String GAME_DESCRIPTION = "Answer 'yes' if given "
+            + "number is prime. Otherwise answer 'no'.";
 
     public static boolean isPrime(int num) {
         for (var i = 2; i < num / 2 + 1; i++) {
