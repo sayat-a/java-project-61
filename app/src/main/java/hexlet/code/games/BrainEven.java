@@ -12,9 +12,10 @@ public class BrainEven {
         Random random = new Random();
         var roundsCount = Engine.getRoundsToWin();
         String[][] questionsAndAnswers = new String[roundsCount][2];
+        final int MAX_RANDOM_NUMBER = 100;
 
         for (int i = 0; i < roundsCount; i++) {
-            var number = random.nextInt(100);
+            var number = random.nextInt(MAX_RANDOM_NUMBER);
             var question = String.valueOf(number);
             var answer = (number % 2 == 0) ? "yes" : "no";
 
