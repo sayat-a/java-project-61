@@ -25,7 +25,7 @@ public class BrainGCD {
         for (int i = 0; i < roundsCount; i++) {
             var number1 = random.nextInt(maxRandomNumber);
             var number2 = random.nextInt(maxRandomNumber);
-            var question = String.format("%d %d", number1, number2);
+            var question = number1 + " " +  number2;
             var answer = String.valueOf(findGCD(number1, number2));
 
             questionsAndAnswers[i][0] = question;
