@@ -9,20 +9,23 @@ public class BrainProgression {
 
     public static String[] generateProgression() {
         Random random = new Random();
-        var step = random.nextInt(10) + 1;
-        var begin = random.nextInt(100) + 1;
-        int[] progression = new int[10];
+        final int PROGRESSION_LENGTH = 10;
+        final int MAX_STEP_NUMBER = 10;
+        final int MAX_RANDOM_NUMBER = 10;
+        var step = random.nextInt(MAX_STEP_NUMBER) + 1;
+        var begin = random.nextInt(MAX_RANDOM_NUMBER) + 1;
+        int[] progression = new int[PROGRESSION_LENGTH];
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < PROGRESSION_LENGTH; i++) {
             progression[i] = begin + i * step;
         }
 
-        var missingIndex = random.nextInt(10);
+        var missingIndex = random.nextInt(PROGRESSION_LENGTH);
         var answer = progression[missingIndex];
         progression[missingIndex] = -1;
 
         String[] formattedProgression = new String[11];
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < PROGRESSION_LENGTH; i++) {
             formattedProgression[i] = (progression[i] == -1) ? ".." : String.valueOf(progression[i]);
         }
         formattedProgression[10] = String.valueOf(answer);
