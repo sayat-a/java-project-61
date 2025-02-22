@@ -3,8 +3,8 @@ import hexlet.code.Engine;
 import java.util.Random;
 
 public class BrainGCD {
-    private static final String GAME_DESCRIPTION = "Find the greatest " +
-            "common divisor of given numbers.";
+    private static final String GAME_DESCRIPTION = "Find the greatest "
+            + "common divisor of given numbers.";
     public static int findGCD(int num1, int num2) {
         while (num1 != num2) {
             if (num1 > num2) {
