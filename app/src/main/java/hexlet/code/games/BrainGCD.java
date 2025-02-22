@@ -20,11 +20,11 @@ public class BrainGCD {
         Random random = new Random();
         var roundsCount = Engine.getRoundsToWin();
         String[][] questionsAndAnswers = new String[roundsCount][2];
-        final int MAX_RANDOM_NUMBER = 100;
+        final int maxRandomNumber = 100;
 
         for (int i = 0; i < roundsCount; i++) {
-            var number1 = random.nextInt(MAX_RANDOM_NUMBER);
-            var number2 = random.nextInt(MAX_RANDOM_NUMBER);
+            var number1 = random.nextInt(maxRandomNumber);
+            var number2 = random.nextInt(maxRandomNumber);
             var question = String.format("%d %d", number1, number2);
             var answer = String.valueOf(findGCD(number1, number2));
 
