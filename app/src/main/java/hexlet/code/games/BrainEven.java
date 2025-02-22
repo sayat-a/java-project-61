@@ -5,8 +5,8 @@ import hexlet.code.Engine;
 
 
 public class BrainEven {
-    private static final String GAME_DESCRIPTION = "Answer 'yes' if the number " +
-        "is even, otherwise answer 'no'.";
+    private static final String GAME_DESCRIPTION = "Answer 'yes' if the number "
+            + "is even, otherwise answer 'no'.";
 
     public static void start() {
         Random random = new Random();
