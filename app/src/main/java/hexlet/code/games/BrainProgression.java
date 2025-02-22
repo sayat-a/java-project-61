@@ -6,14 +6,14 @@ import java.util.Random;
 public class BrainProgression {
     private static final String GAME_DESCRIPTION = "What number is missing "
             + "in the progression?";
+    private static final int PROGRESSION_LENGTH = 10;
 
     public static String[] generateProgression() {
         Random random = new Random();
-        final int PROGRESSION_LENGTH = 10;
-        final int MAX_STEP_NUMBER = 10;
-        final int MAX_RANDOM_NUMBER = 10;
-        var step = random.nextInt(MAX_STEP_NUMBER) + 1;
-        var begin = random.nextInt(MAX_RANDOM_NUMBER) + 1;
+        final int maxStepNumber = 10;
+        final int maxRandomNumber = 10;
+        var step = random.nextInt(maxStepNumber) + 1;
+        var begin = random.nextInt(maxRandomNumber) + 1;
         int[] progression = new int[PROGRESSION_LENGTH];
 
         for (int i = 0; i < PROGRESSION_LENGTH; i++) {
@@ -24,11 +24,11 @@ public class BrainProgression {
         var answer = progression[missingIndex];
         progression[missingIndex] = -1;
 
-        String[] formattedProgression = new String[11];
+        String[] formattedProgression = new String[PROGRESSION_LENGTH + 1];
         for (int i = 0; i < PROGRESSION_LENGTH; i++) {
             formattedProgression[i] = (progression[i] == -1) ? ".." : String.valueOf(progression[i]);
         }
-        formattedProgression[10] = String.valueOf(answer);
+        formattedProgression[PROGRESSION_LENGTH] = String.valueOf(answer);
 
         return formattedProgression;
     }
@@ -39,8 +39,8 @@ public class BrainProgression {
 
         for (int i = 0; i < roundsCount; i++) {
             var progressionData = generateProgression();
-            var question = String.join(" ", java.util.Arrays.copyOf(progressionData, 10));
-            var answer = progressionData[10];
+            var question = String.join(" ", java.util.Arrays.copyOf(progressionData, PROGRESSION_LENGTH));
+            var answer = progressionData[PROGRESSION_LENGTH];
 
             questionsAndAnswers[i][0] = question;
             questionsAndAnswers[i][1] = answer;
